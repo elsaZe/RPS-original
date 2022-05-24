@@ -50,4 +50,32 @@ function singleRound(playerSelection, computerSelection) {
     return result;
 }
 
-console.log(singleRound('paper', computerPlay()))
+let userChoice;
+
+function promptUser() {
+    userChoice = prompt("Rock, Paper or Scissors");
+}
+
+let wins = 0;
+let loses = 0;
+
+for (i=0; i<5; i++) {
+    promptUser()
+    console.log(userChoice)
+    singleRound(userChoice, computerPlay());
+    if (result == 'win') {
+        wins++;
+    } else if (result == 'loss') {
+        loses++;
+    }
+    console.log("The Score is: "+wins+" wins to "+loses)
+}
+
+if (wins < loses) {
+    console.log("You lose!");
+} else if (wins > loses){
+     console.log("You Win!");
+} else if (wins === loses) {
+    console.log("It's a tie!");
+}
+
