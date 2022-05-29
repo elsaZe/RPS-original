@@ -3,23 +3,44 @@
 <head>
     <meta charset="utf-8">
     <title>Odin RPS</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Play Rock, Paper Scissors!</h1>
-    <p>Can you beat the computer in a first to five game of RPS? Click a button to make your selection.</p>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-    <div id="roundResults">
-        <div id="player"></div>
-        <div id="roundResult"></div>
-        <div id="computer"></div>
-    </div>
-    <div id="results"></div>
-        <div id="playerScore"></div>
-        <div id="computerScore"></div>
-        <div id="totalScore"></div>
+    <div class="header">
+        <h1>Play Rock Paper Scissors!</h1>
+        <p>Can you beat the computer in a first to five game of RPS?</p> 
         <button id="reset">Reset Game</button>
+    </div>
+    <p>Click a button to make your selection:</p>
+    <div class = "buttons">
+        <button id="rock"></button>
+        <button id="paper"></button>
+        <button id="scissors"></button>
+    </div>
+    <div id="roundTally">
+        <div class = "playerChoice">
+            <div>You Select:</div>
+            <div id="player"></div>
+        </div>    
+        <div id="roundResult"></div>
+        <div class = "computerChoice">
+            <div>Computer Selects:</div>
+            <div id="computer"></div>
+        </div>
+    </div>
+    <div id="results">
+        <div id="totalScore"></div>
+        <table>
+            <tr>
+                <th>Player's Score</th>
+                <th>Computer's Score</th>
+            </tr>
+            <tr>
+                <td id="playerScore"></td>
+                <td id="computerScore"></td>
+            </tr>
+        </table>
+    </div>
     <script src="javascript.js">
     </script>
 </body>

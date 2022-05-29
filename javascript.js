@@ -19,6 +19,7 @@ const reset = document.querySelector('#reset');
 reset.disabled = true;
 reset.addEventListener('click', resetGame)
 
+
 function resetGame() {
     wins = 0;
     loses = 0;
@@ -79,11 +80,11 @@ function singleRound(playerSelection) {
     }
 
     if(result == 'win' && five < 5){
-        roundResult.textContent = `${playerSelection} beats ${computerSelection}. You win this round`
+        roundResult.textContent = "<--"
     } else if (result == 'loss' && five < 5) {
-        roundResult.textContent = `${computerSelection} beats ${playerSelection}. You lose this round`
+        roundResult.textContent = "-->"
     } else if (result == 'tie' && five < 5) {
-        roundResult.textContent = "It's a tie. Try again!"
+        roundResult.textContent = "--"
     } else {
         roundResult.textContent = ""
     }
