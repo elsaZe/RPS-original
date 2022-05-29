@@ -11,14 +11,11 @@ function computerPlay() {
     return computerChoice
 }
 
-
-
 let result;
-let playerSelection;
 
-function singleRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function singleRound(playerSelection) {
     console.log(playerSelection)
+    computerSelection = computerPlay();
     console.log(computerSelection)
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
@@ -50,27 +47,19 @@ function singleRound(playerSelection, computerSelection) {
     return result;
 }
 
-let userChoice;
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {singleRound('rock')});
 
-function promptUser() {
-    userChoice = prompt("Rock, Paper or Scissors");
-}
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {singleRound('paper')});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {singleRound('scissors')});
 
 let wins = 0;
 let loses = 0;
 
-for (i=0; i<5; i++) {
-    promptUser()
-    console.log(userChoice)
-    singleRound(userChoice, computerPlay());
-    if (result == 'win') {
-        wins++;
-    } else if (result == 'loss') {
-        loses++;
-    }
-    console.log("The Score is: "+wins+" wins to "+loses)
-}
-
+/*
 if (wins < loses) {
     console.log("You lose!");
 } else if (wins > loses){
@@ -78,4 +67,5 @@ if (wins < loses) {
 } else if (wins === loses) {
     console.log("It's a tie!");
 }
+*/
 
